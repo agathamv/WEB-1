@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="juego.js"></script>
+    <title>JUEGO</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1 id="titulo" class="text-center">Piedra, papel o tijera</h1>
+
+        <div id="Jugadores" class="d-flex justify-content-end mb-3">
+            <label for="numJugadores" class="me-2">Selecciona el número de jugadores:</label>
+            <select id="numJugadores" class="form-control">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center p-0">
+                <div id="jugador1" class="d-none">
+                    <h3>Jugador 1</h3>
+                    <div id="contenedorImagenes1" class="d-flex justify-content-center"></div>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center p-0">
+                <div id="jugador2" class="d-none">
+                    <h3>Jugador 2</h3>
+                    <div id="contenedorImagenes2" class="d-flex justify-content-center"></div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="d-flex justify-content-center mt-3">
+            <button id="jugar" class="btn btn-primary mx-2">Jugar</button>
+            <button id="finalizar" class="btn btn-primary mx-2">Finalizar</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

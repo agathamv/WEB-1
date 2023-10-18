@@ -1,0 +1,84 @@
+#titulo{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#Jugadores{
+    align-content: flex-end;
+}
+
+#numJugadores{
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body {
+    background-color: rgb(207, 230, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-button {
+    padding: 10px 20px;
+    background-color: #7da4ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.my-button:hover {
+    background-color: #2d4796;
+}
+.my-button:active {
+    background-color: #7da4ff;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+
+#jugador1, #jugador2 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#contenedorImagenes1, #contenedorImagenes2 {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedorImagenes1 img, #contenedorImagenes2 img {
+    max-width: 200px; 
+    max-height: 200px; 
+    margin-bottom: 10px;
+}
+
+.imagen-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.imagen-button img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.imagen-button:hover img {
+    filter: brightness(70%);
+}
+
