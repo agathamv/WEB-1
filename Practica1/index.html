@@ -1,3 +1,5 @@
+<!--Agatha Martin Villadoniga -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
 <body>
     <div class="container">
 
-        <h1 id="titulo" class="text-center">Piedra, papel o tijera</h1>
+        <h1 id="titulo" class="text-center">Piedra, Papel o Tijera</h1>
 
         <div id="Jugadores" class="d-flex justify-content-end mb-3">
             <label for="numJugadores" class="me-2">Selecciona el número de jugadores:</label>
@@ -36,12 +38,19 @@
                 </div>
             </div>
         </div>
-        
 
-        <div class="d-flex justify-content-center mt-3">
+        <div id="jugada"></div>
+        <div id="resultado"></div>
+        <div id="contador"></div>
+        <div id="cuentaAtras" class="text-center"></div>
+
+
+        <div class="d-flex justify-content-center mt-3" id="botones_jr">
             <button id="jugar" class="btn btn-primary mx-2">Jugar</button>
-            <button id="finalizar" class="btn btn-primary mx-2">Finalizar</button>
+            <button id="reiniciar" class="btn btn-primary mx-2">Finalizar</button>
         </div>
+
+        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
