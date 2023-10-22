@@ -149,6 +149,14 @@ body {
     font-size: 30px;
 }
 
+#ganador {
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'SuperDream', Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(65, 119, 79);
+    font-size: 30px;
+}
+
 #cuentaAtras {
     text-align: center;
     margin-top: 10px;
