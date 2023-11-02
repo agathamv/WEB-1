@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dos o Uno</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="text-center">
+    <div class="container">
+        <h1>Dos o Uno</h1>
+        <div class="options">
+            <label for="partidas">Nº Partidas:</label>
+            <select id="partidas">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="humanos">Nº Jugadores Humanos:</label>
+            <select id="humanos">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <button onclick="jugar()">Jugar</button>
+            <button onclick="reiniciar()">Reiniciar</button>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="player">
+                    <h3>Jugador 1</h3>
+                    <p>Jugada:</p>
+                    <img id="player-1-image" src="cero.png" alt="Eleccion jugador 1">
+                </div>
+            </div>
+            <div class="col">
+                <div class="player">
+                    <h3>Jugador 2</h3>
+                    <p>Jugada:</p>
+                    <img id="player-2-image" src="cero.png" alt="Eleccion jugador 2">
+                </div>
+            </div>
+            <div class="col">
+                <div class="player">
+                    <h3>Jugador 3</h3>
+                    <p>Jugada:</p>
+                    <img id="player-3-image" src="cero.png" alt="Eleccion jugador 3">
+                </div>
+            </div>
+        </div>
+        <div class="result">
+            <h2>Resultado:</h2>
+            <p id="gameResult"></p>
+        </div>
+        <div class="scores">
+            <h2>Puntuaciones:</h2>
+            <p id="player1Score">Jugador 1: 0</p>
+            <p id="player2Score">Jugador 2: 0</p>
+            <p id="player3Score">Jugador 3: 0</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
