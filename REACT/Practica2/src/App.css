@@ -1,38 +1,126 @@
+body {
+  background-image: url('./images/fondo.png'); /* Ruta a la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño para cubrir toda la pantalla */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen en su lugar mientras se desplaza la página */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
 .App {
-  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.title-container img {
+  margin-left: 10px; /* Ajusta el margen según sea necesario */
+  height: 70px; /* Ajusta la altura según el tamaño de la imagen */
+  
+}
+
+.note {
+  background-color: rgba(45, 45, 45, 0.313);
+  padding: 10px; 
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+}
+
+.editor-button {
+  border-radius: 20px;
+  font-size: 30px;  
+  background: #797979;
   color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.editor-button:hover {
+  background: #303030;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.note-editor input,
+.note-editor textarea {
+  border-radius: 10px;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.note-editor textarea{
+  height: 100px;
+}
+
+.note-delete-button {
+  background-color: #797979;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.note-delete-button:hover {
+  background-color:  #303030;
+}
+
+.note-editor button {
+  border-radius: 20px;  
+  background: #797979;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.note-editor button:hover {
+  background: #303030;
+}
+
+#Lista{
+  margin-top: 10px;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.search-bar button {
+  border-radius: 20px;
+  background: #797979;
+  color: white;
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #303030;
 }

@@ -11,7 +11,7 @@
     <div class="container">
         <h1>Dos o Uno</h1>
         <div class="options">
-            <label for="partidas">Nº Partidas:</label>
+            <label for="partidas">Número de Partidas:</label>
             <select id="partidas">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -19,45 +19,45 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <label for="humanos">Nº Jugadores Humanos:</label>
+            <label for="humanos">Número de Jugadores Humanos:</label>
             <select id="humanos">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
             </select>
-            <button onclick="jugar()">Jugar</button>
-            <button onclick="reiniciar()">Reiniciar</button>
+            <button onclick="jugar()">Comenzar Juego</button>
+            <button onclick="reiniciar()">Reiniciar Partida</button>
         </div>
         <div class="row">
             <div class="col">
-                <div class="player">
+                <div class="player" id="player-1">
                     <h3>Jugador 1</h3>
-                    <p>Jugada:</p>
+                    <p>Eleccion: <span id="player1Choice">-</span></p>
                     <img id="player-1-image" src="cero.png" alt="Eleccion jugador 1">
                 </div>
             </div>
             <div class="col">
-                <div class="player">
+                <div class="player" id="player-2">
                     <h3>Jugador 2</h3>
-                    <p>Jugada:</p>
+                    <p>Eleccion: <span id="player2Choice">-</span></p>
                     <img id="player-2-image" src="cero.png" alt="Eleccion jugador 2">
                 </div>
             </div>
             <div class="col">
-                <div class="player">
+                <div class="player" id="player-3">
                     <h3>Jugador 3</h3>
-                    <p>Jugada:</p>
+                    <p>Eleccion: <span id="player3Choice">-</span></p>
                     <img id="player-3-image" src="cero.png" alt="Eleccion jugador 3">
                 </div>
             </div>
         </div>
         <div class="result">
             <h2>Resultado:</h2>
-            <p id="gameResult"></p>
+            <p id="gameResult"> </p>
         </div>
         <div class="scores">
-            <h2>Puntuaciones:</h2>
+            <h2>Contadores de Puntos:</h2>
             <p id="player1Score">Jugador 1: 0</p>
             <p id="player2Score">Jugador 2: 0</p>
             <p id="player3Score">Jugador 3: 0</p>

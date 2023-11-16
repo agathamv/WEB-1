@@ -9,7 +9,7 @@ function mostrarImagen(id, numero) {
         imagen = 'uno.png';
     } else if (numero === 2) {
         imagen = 'dos.png';
-    } else if (numero === 'cero') { // Asegúrate de comparar con 'cero'
+    } else if (numero === 'cero') {
         imagen = 'cero.png';
     }
     document.getElementById(id).src = imagen;
@@ -29,6 +29,7 @@ function jugarRonda(partida) {
     if (numHumanos === 0) {
         for (let i = 1; i <= 3; i++) {
             let choice = Math.floor(Math.random() * 2) + 1;
+            document.getElementById(`player${i}Choice`).innerText = choice;
             mostrarImagen(`player-${i}-image`, choice);
             elecciones.push(choice);
         }
@@ -36,12 +37,12 @@ function jugarRonda(partida) {
         for (let i = 1; i <= 3; i++) {
             if (i === 1) {
                 let choice = parseInt(prompt("Jugador 1, elige 1 o 2:"));
-                document.getElementById(`player-${i}-choice`).innerText = choice;
+                document.getElementById(`player${i}Choice`).innerText = choice;
                 mostrarImagen(`player-${i}-image`, choice);
                 elecciones.push(choice);
             } else {
                 let choice = Math.floor(Math.random() * 2) + 1;
-                document.getElementById(`player-${i}-choice`).innerText = choice;
+                document.getElementById(`player${i}Choice`).innerText = choice;
                 mostrarImagen(`player-${i}-image`, choice);
                 elecciones.push(choice);
             }
@@ -50,12 +51,12 @@ function jugarRonda(partida) {
         for (let i = 1; i <= 3; i++) {
             if (i <= 2) {
                 let choice = parseInt(prompt(`Jugador ${i}, elige 1 o 2:`));
-                document.getElementById(`player-${i}-choice`).innerText = choice;
+                document.getElementById(`player${i}Choice`).innerText = choice;
                 mostrarImagen(`player-${i}-image`, choice);
                 elecciones.push(choice);
             } else {
                 let choice = Math.floor(Math.random() * 2) + 1;
-                document.getElementById(`player-${i}-choice`).innerText = choice;
+                document.getElementById(`player${i}Choice`).innerText = choice;
                 mostrarImagen(`player-${i}-image`, choice);
                 elecciones.push(choice);
             }
@@ -63,7 +64,7 @@ function jugarRonda(partida) {
     } else if (numHumanos === 3) {
         for (let i = 1; i <= 3; i++) {
             let choice = parseInt(prompt(`Jugador ${i}, elige 1 o 2:`));
-            document.getElementById(`player-${i}-choice`).innerText = choice;
+            document.getElementById(`player${i}Choice`).innerText = choice;
             mostrarImagen(`player-${i}-image`, choice);
             elecciones.push(choice);
         }
@@ -90,20 +91,20 @@ function jugarRonda(partida) {
     if (partida < numPartidas) {
         setTimeout(function() {
             alert(`Prepárate para la siguiente ronda. Partida ${partida + 1} va a comenzar.`);
-            jugarRonda(partida + 1); // Iniciar la siguiente ronda
-        }, 3000); // Esperar 3 segundos antes de la siguiente ronda
+            jugarRonda(partida + 1);
+        }, 3000);
     }
 }
 
 function jugar() {
     numPartidas = parseInt(document.getElementById('partidas').value);
-    jugarRonda(1); // Comenzar la primera ronda
+    jugarRonda(1);
 }
 
 function reiniciar() {
     for (let i = 1; i <= 3; i++) {
-        document.getElementById(`player-${i}-choice`).innerText = "-";
-        mostrarImagen(`player-${i}-image`, 'cero'); // Cambiar a cero.png
+        document.getElementById(`player${i}Choice`).innerText = "-";
+        mostrarImagen(`player-${i}-image`, 'cero');
     }
     document.getElementById('gameResult').innerText = "";
     player1Score = 0;

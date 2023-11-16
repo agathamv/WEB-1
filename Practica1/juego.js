@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var reiniciarBtn = document.getElementById('reiniciar'); 
     var jugador1 = document.getElementById('jugador1');
     var jugador2 = document.getElementById('jugador2');
-    var jugada = document.getElementById('jugada'); // Agregado
+    var jugada = document.getElementById('jugada'); 
     var resultado = document.getElementById('resultado');
     var contador = { jugador1: 0, jugador2: 0 };
     var imagenesGeneradas = false;
@@ -82,10 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 for (var i = 0; i < imagenes.length; i++) {
                     var col = document.createElement('div');
-                    col.classList.add('col-md-4'); // Cada botón ocupará 4 columnas en pantallas medianas y grandes
+                    col.classList.add('col-md-4'); 
                     var boton = document.createElement('button');
-                    boton.classList.add('btn', 'btn-primary', 'imagen-button', 'w-100'); // Ajustamos el ancho del botón
-                    boton.type = 'button'; // Agregamos el tipo de botón
+                    boton.classList.add('btn', 'btn-primary', 'imagen-button', 'w-100'); 
+                    boton.type = 'button'; 
                     var imagen = document.createElement('img');
                     imagen.src = imagenes[i];
                     imagen.alt = 'Opción ' + (i + 1);
@@ -103,6 +103,15 @@ document.addEventListener('DOMContentLoaded', function() {
             jugador1.classList.remove('d-none');
             jugador2.classList.remove('d-none');
             imagenesGeneradas = true;
+
+            // Mostrar alertas
+            if (numJugadores.value == '2') {
+                alert('Este es un juego jugador 1 vs jugador 2.');
+            } else if (numJugadores.value == '1') {
+                alert('Este es un juego de jugador vs bot. Tú eres el jugador 1.');
+            } else if (numJugadores.value == '0') {
+                alert('Este es un juego de bot vs bot.');
+            }
         }
 
         // Jugar una ronda
@@ -127,11 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var ganador = determinarGanador();
         var ganadorElement = document.getElementById('ganador');
         if (ganador === 'jugador1') {
-            ganadorElement.textContent = '¡Jugador 1 es el ganador final!';
+            ganadorElement.textContent = '¡Jugador 1 es el ganador!';
         } else if (ganador === 'jugador2') {
-            ganadorElement.textContent = '¡Jugador 2 es el ganador final!';
+            ganadorElement.textContent = '¡Jugador 2 es el ganador!';
         } else {
-            ganadorElement.textContent = '¡Empate final!';
+            ganadorElement.textContent = '¡Empate!';
         }
 
         var tiempoRestante = 10;
@@ -163,8 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 jugador1.classList.add('d-none');
                 jugador2.classList.add('d-none');
                 document.getElementById('contador').textContent = '';
-                cuentaAtrasElement.textContent = ''; // Limpiar el texto de la cuenta atrás
-                ganadorElement.textContent = '';
+                cuentaAtrasElement.textContent = ''; 
+                ganadorElement.textContent = ''; // Limpiar el texto del ganador
             }
         }, 1000);
     });
