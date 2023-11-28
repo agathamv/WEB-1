@@ -1,0 +1,16 @@
+.navbar {
+    background:rgb(201, 201, 252);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4rem;
+    align-items: center;
+}
+
+.navbar ul {
+   display: flex;
+   gap: 1rem; 
+}
+
+.navbar ul li {
+    list-style: none;
+}
