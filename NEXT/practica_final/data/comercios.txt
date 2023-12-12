@@ -1,0 +1,1 @@
+[{"id":"caed75f4-e985-4a87-8edc-623e2c53536d","nombreComercio":"belros","cif":"321","direccion":"la vaguada","email":"a@a.com","telefono":"485937281"}]
