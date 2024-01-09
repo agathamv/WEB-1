@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
+import Navbar from '@/components/Navbar';
 
 const AdminPage = () => {
   const router = useRouter();
@@ -24,10 +25,7 @@ const AdminPage = () => {
         <title>City Commerce</title>
       </Head>
 
-      <header className="header">
-        <img src="./images/logo.png" className="logo" />
-        <h1 id="titulo">City Commerce</h1>
-      </header>
+      <Navbar/>
 
       <div className='title text-center'>
         <h2>Panel de Administrador</h2>

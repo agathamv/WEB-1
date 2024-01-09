@@ -3,7 +3,6 @@
 import { writeFileSync, readFileSync } from 'fs';
 import { NextResponse } from 'next/server';
 
-// Maneja solicitudes POST
 export async function POST(req) {
   const data = await req.json();
 
@@ -17,29 +16,45 @@ export async function POST(req) {
   return NextResponse.json({ message: "Guardando" });
 }
 
-// Maneja solicitudes GET
-export async function GET() {
-  try {
-    const comercios = JSON.parse(readFileSync("data/comercios.txt"));
-    return NextResponse.json(comercios);
-  } catch (e) {
-    return NextResponse.json([]);
+export async function GET(request) {
+  const cif = request.nextUrl.searchParams.get("cif"); // Cambiar de id a cif
+
+  if (cif) {
+    try {
+      const comercios = JSON.parse(readFileSync("data/comercios.txt"));
+      const comercio = comercios.find((c) => c.cif === cif); // Buscar por cif
+
+      if (comercio) {
+        return NextResponse.json(comercio);
+      } else {
+        return NextResponse.error(new Error('Comercio not found'), { status: 404 });
+      }
+    } catch (error) {
+      console.error('Error fetching comercio data:', error);
+      return NextResponse.error(new Error('Internal Server Error'), { status: 500 });
+    }
+  } else {
+    try {
+      const comercios = JSON.parse(readFileSync("data/comercios.txt"));
+      return NextResponse.json(comercios);
+    } catch (e) {
+      return NextResponse.json([]);
+    }
   }
 }
 
-
 export async function DELETE(request) {
   try {
-    const IDdelete = request.nextUrl.searchParams.get("id");
+    const cifToDelete = request.nextUrl.searchParams.get("cif"); 
 
     let comercios = JSON.parse(readFileSync("data/comercios.txt"));
     
-    comercios = comercios.filter(comercios => comercios.id !== IDdelete);
+    comercios = comercios.filter(comercio => comercio.cif !== cifToDelete); // Buscar por cif
     
     writeFileSync("data/comercios.txt", JSON.stringify(comercios));
 
-    return NextResponse.json({message: "comercio eliminado"});
+    return NextResponse.json({ message: "Comercio eliminado" });
   } catch (e) {
-    return NextResponse.json({message: "error"});
+    return NextResponse.json({ message: "Error al eliminar el comercio" });
   }
 }

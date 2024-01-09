@@ -1,10 +1,10 @@
 "use client"
 
-// RegistroComercioPage.js
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from '@/components/Navbar';
 import '../style.css';
 import { v4 as uuidv4 } from 'uuid'; // Importa uuid
 
@@ -16,25 +16,47 @@ const RegistroComercioPage = () => {
   const [direccion, setDireccion] = useState('');
   const [email, setEmail] = useState('');
   const [telefono, setTelefono] = useState('');
+  const [contrasena, setContrasena] = useState(''); // Nuevo estado para la contraseña
+  const [confirmarContrasena, setConfirmarContrasena] = useState(''); // Nuevo estado para confirmar contraseña
+  const [fotos, setFotos] = useState([]); // Estado inicial como un array vacío
+  const [puntuaciones, setPuntuaciones] = useState([]); // Estado inicial como un array vacío
+  const [reseñas, setReseñas] = useState([]); // Estado inicial como un array vacío
   const [errorMessage, setErrorMessage] = useState('');
   const [formIsValid, setFormIsValid] = useState(false);
 
   // Validar el formulario cada vez que cambia un campo
   useEffect(() => {
-    // Verifica si los campos obligatorios están llenos
-    setFormIsValid(nombreComercio && cif && direccion && email && telefono);
-  }, [nombreComercio, cif, direccion, email, telefono]);
+    // Verifica si los campos obligatorios están llenos y si las contraseñas coinciden
+    setFormIsValid(
+      nombreComercio &&
+        cif &&
+        direccion &&
+        email &&
+        telefono &&
+        contrasena &&
+        confirmarContrasena &&
+        contrasena === confirmarContrasena
+    );
+  }, [nombreComercio, cif, direccion, email, telefono, contrasena, confirmarContrasena]);
 
   const handleRegistroComercio = async () => {
     try {
       if (formIsValid) {
+        // Añadir los campos adicionales con valores predeterminados vacíos
         const comercioData = {
-          id: uuidv4(), // Generar un ID único
+          id: uuidv4(),
           nombreComercio,
           cif,
           direccion,
           email,
           telefono,
+          contrasena,
+          ciudad: '',
+          actividad: '',
+          texto: '', 
+          fotos,
+          puntuaciones,
+          reseñas,
         };
 
         // Almacena la información localmente
@@ -65,8 +87,13 @@ const RegistroComercioPage = () => {
         setDireccion('');
         setEmail('');
         setTelefono('');
+        setContrasena('');
+        setConfirmarContrasena('');
+        setFotos([]);
+        setPuntuaciones([]);
+        setReseñas([]);
       } else {
-        setErrorMessage('Por favor, completa todos los campos antes de registrar el comercio.');
+        setErrorMessage('Por favor, completa todos los campos correctamente antes de registrar el comercio.');
       }
     } catch (error) {
       console.error('Error al procesar la solicitud POST:', error);
@@ -80,10 +107,7 @@ const RegistroComercioPage = () => {
         <title>Registro de Comercio</title>
       </Head>
 
-      <header className="header">
-        <img src="../images/logo.png" className="logo" />
-        <h1 id="titulo">City Commerce</h1>
-      </header>
+      <Navbar/>
 
       <div className="content-container">
         <div className="registro-container white-bg">
@@ -142,6 +166,27 @@ const RegistroComercioPage = () => {
                 onChange={(e) => setTelefono(e.target.value)}
               />
             </div>
+            <div className="form-group">
+              <label htmlFor="contrasena">Contraseña:</label>
+              <input
+                type="password"
+                id="contrasena"
+                className="form-control"
+                value={contrasena}
+                onChange={(e) => setContrasena(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="confirmarContrasena">Confirmar Contraseña:</label>
+              <input
+                type="password"
+                id="confirmarContrasena"
+                className="form-control"
+                value={confirmarContrasena}
+                onChange={(e) => setConfirmarContrasena(e.target.value)}
+              />
+            </div>
+
             <button type="button" className="btn btn-primary" onClick={handleRegistroComercio}>
               Registrarse
             </button>

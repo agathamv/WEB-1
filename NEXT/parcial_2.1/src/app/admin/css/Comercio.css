@@ -1,0 +1,40 @@
+/* Estilos para Comercios */
+.nota-container {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px auto; /* Auto en el margen horizontal centra el elemento */
+    padding: 10px;
+    width: 600px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+  }
+  
+  .nota-texto {
+    margin-bottom: 10px;
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  
+  .nombre,
+  .cif,
+  .direccion,
+  .email,
+  .telefono {
+    margin-bottom: 5px;
+  }
+  
+  .button-eliminar {
+    background-color: #dc3545; /* Color rojo */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%; /* El botón ocupa todo el ancho */
+  }
+  
+  .button-eliminar:hover {
+    background-color: #c82333; /* Color rojo oscuro al pasar el mouse */
+  }
+  

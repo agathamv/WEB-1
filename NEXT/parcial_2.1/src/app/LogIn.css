@@ -1,0 +1,9 @@
+body {
+    background: linear-gradient(to bottom, #3498db, #bdc3c7);
+
+}
+    
+.form-nota{
+    background-color: none;
+    width: 90%;
+}

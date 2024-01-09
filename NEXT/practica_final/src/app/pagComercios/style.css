@@ -1,0 +1,125 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-image: url('../../components/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  height: 100vh; /* Esto asegura que el fondo ocupe el 100% de la altura de la ventana */
+}
+
+.consultar-container{
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  margin: 50px;
+}
+
+.formulario-container{
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 50px;
+  padding: 10px;
+}
+
+.content-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comerce-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select{
+  border-radius: 8px;
+  border: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.305);
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.datos{
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.btn-editar {
+  background-color: #DA3E91;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-editar:hover {
+  background-color: #EFA9CE;
+}
+
+
+.btn-guardar {
+  background-color: #DA3E91;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-guardar:hover {
+  background-color: #EFA9CE;
+}
+
+.btn-reseñas{
+  background-color: #DA3E91;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-reseñas:hover {
+  background-color: #EFA9CE;
+}
+
+.btn-mostrar-usuarios{
+  background-color: #DA3E91;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn-mostrar-usuarios:hover {
+  background-color: #EFA9CE;
+}

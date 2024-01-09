@@ -1,0 +1,50 @@
+/* Estilos para ComerciosList */
+body {
+  background: #8bd0ff;
+  position: relative;
+
+}
+.container-NotaEditor {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+  }
+  
+  .Filtrados,
+  .Todos {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  .Form {
+   
+    padding: 20px;
+    background-color: #fff; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 900px;
+  }
+
+  #user{
+    margin-top: 300px;
+
+  }
+
+  #admin{
+    margin-top: 1400px;
+  }

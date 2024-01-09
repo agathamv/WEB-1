@@ -1,0 +1,35 @@
+/* Estilos para ComerciosEditor */
+.form-nota {
+    width: 80%; /* Ancho del formulario */
+    margin: auto; /* Centra el formulario horizontalmente */
+    padding: 20px;
+    padding-top: 10%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .insertarNota {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .button-nota {
+    background-color: #007bff; /* Color azul */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .button-nota:hover {
+    background-color: #0056b3; /* Color azul oscuro al pasar el mouse */
+  }
+  
+  /* Puedes agregar más estilos según sea necesario */
+  

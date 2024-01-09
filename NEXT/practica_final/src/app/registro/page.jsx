@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -81,17 +82,7 @@ const RegistroPage = () => {
         const result = await response.json();
         console.log(result);
   
-        // Lógica de redirección según el tipo de usuario
-        switch (tipoUsuario) {
-          case 'administrador':
-            router.push('/administrador');
-            break;
-          case 'usuarioComun':
-            router.push('/user');
-            break;
-          default:
-            break;
-        }
+        router.push('/inicioSesion');
       } catch (error) {
         console.error('Error al procesar la solicitud POST:', error);
         setErrorMessage('Error interno del servidor');
@@ -219,10 +210,7 @@ const RegistroPage = () => {
         <title>City Commerce - Registro</title>
       </Head>
 
-      <header className="header">
-        <img src="/images/logo.png" className="logo" />
-        <h1 id="titulo">City Commerce</h1>
-      </header>
+      <Navbar />
 
       <div className="content-container">
         <div className="login-container">

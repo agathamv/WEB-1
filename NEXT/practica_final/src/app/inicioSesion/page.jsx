@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
+import Navbar from '../../components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function InicioPage() {
@@ -31,42 +32,59 @@ export default function InicioPage() {
     try {
       if (formIsValid) {
         let apiUrl;
-  
-        // Construir la URL de la API según el tipo de usuario seleccionado
         switch (selectedOption) {
           case 'administrador':
             apiUrl = '/api/admin';
-            break;
+          break;
+
+          case 'comercio':
+            apiUrl = '/api/comercios';
+          break;
+          
           case 'usuarioRegistrado':
             apiUrl = '/api/users';
-            break;
+          break;
+
+          case 'usuarioNoRegistrado':
+          router.push('/noUser');
+          return;
+          
           default:
             setErrorMessage('Tipo de usuario no válido.');
-            return;
+          return;
         }
   
-        // Hacer la solicitud a la API
         const response = await fetch(apiUrl);
         const data = await response.json();
   
-        // Comprobar si hay coincidencia de usuario y contraseña
-        const accountMatch = data.find(
-          (account) => account.nombreUsuario === usuario && account.contrasena === contrasena
-        );
+        const accountMatch =
+          selectedOption === 'comercio'
+            ? data.find((account) => account.cif === usuario && account.contrasena === contrasena)
+            : data.find((account) => account.nombreUsuario === usuario && account.contrasena === contrasena);
   
-        if (accountMatch) {
-          // Redirigir según el tipo de usuario
-          router.push(`/${selectedOption}`);
-        } else {
-          // Mostrar mensaje de error si la cuenta no existe o las credenciales no coinciden
-          setErrorMessage('Usuario o contraseña incorrectos.');
-        }
-      } else {
-        // Mostrar mensaje de error si el formulario no es válido
-        setErrorMessage('Por favor, completa todos los campos obligatorios antes de continuar.');
+            if (accountMatch) {
+              if (selectedOption === 'comercio') {
+                const cifComercio = accountMatch.cif;
+            
+                // Almacenar cifComercio en localStorage
+                localStorage.setItem('cifComercio', cifComercio);
+            
+                router.push('/pagComercios');
+              } else if(selectedOption === 'usuarioRegistrado'){
+                const nombreUsuario = accountMatch.nombreUsuario;
+            
+                // Almacenar cifComercio en localStorage
+                localStorage.setItem('nombreUsuario', nombreUsuario);
+            
+                router.push('/user');
+              }else{
+                router.push(`/${selectedOption}`);
+              }
+            } else {
+              setErrorMessage('Usuario, CIF o contraseña incorrectos.');
+            }
       }
     } catch (error) {
-      // Manejar errores de la solicitud
       console.error('Error al procesar la solicitud:', error);
       setErrorMessage('Error interno del servidor');
     }
@@ -77,6 +95,8 @@ export default function InicioPage() {
       <Head>
         <title>City Commerce</title>
       </Head>
+
+      <Navbar />
 
       <div className="content-container">
         <div className="login-container">
@@ -138,4 +158,4 @@ export default function InicioPage() {
       </div>
     </div>
   );
-}
+};

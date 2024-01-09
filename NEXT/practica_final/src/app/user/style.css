@@ -1,0 +1,96 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-image: url('../../components/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    height: 100vh;
+}
+
+.userName{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    margin-bottom: 10px;
+}
+  
+input[type='text'] {
+    width: 100%; /* Ajusta el ancho al 100% */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.form-control{
+    width: 100%; /* Ajusta el ancho al 100% */
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+  
+
+.comercio-container{
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px;
+    padding: 30px;
+}
+  
+.content-container{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.foto{
+    height: 200px;
+    width: 100%;
+}
+
+.boton-evaluar{
+    background-color: #1C2C73;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton-evaluar:hover {
+    background-color: #101942;
+  }
+
+
+  .boton-ofertas, .boton-editar, .btn-guardar {
+    background-color: #DA3E91;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.boton-ofertas:hover, .boton-editar:hover, .btn-guardar:hover {
+    background-color: #E887BB;
+}
+
+
