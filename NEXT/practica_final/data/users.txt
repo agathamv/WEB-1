@@ -1,1 +1,1 @@
-[{"tipoUsuario":"usuarioComun","nombre":"Lola","nombreUsuario":"lola","email":"lola@gmail.com","contrasena":"1","confirmarContrasena":"1","edad":"34","ciudad":"Vigo","intereses":"Cantar y dibujar","permiteRecibirOfertas":"si"}]
+[{"tipoUsuario":"usuarioComun","nombre":"Lola","nombreUsuario":"lola","email":"lola@gmail.com","contrasena":"1","confirmarContrasena":"1","edad":"34","ciudad":"Mallorca","intereses":"Bailar","permiteRecibirOfertas":"no"}]
